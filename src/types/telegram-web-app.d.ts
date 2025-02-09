@@ -3,7 +3,11 @@ declare global {
       Telegram: {
         WebApp: {
           initData: string;
-          initDataUnsafe: object;
+          initDataUnsafe?: {
+            user?: {
+              username?: string
+            }
+          };
           logo: string;
           colorScheme: string;
           viewportHeight: number;
