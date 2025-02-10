@@ -1,5 +1,5 @@
 import './PurchaseForm.css'
-import { Button } from "@chakra-ui/react"
+import { Button, createListCollection } from "@chakra-ui/react"
 import {
     DialogBody,
     DialogCloseTrigger,
@@ -10,6 +10,15 @@ import {
     DialogTitle,
     DialogDescription
 } from "@/components/ui/dialog"
+
+import {
+    SelectContent,
+    SelectItem,
+    SelectLabel,
+    SelectRoot,
+    SelectTrigger,
+    SelectValueText,
+} from "@/components/ui/select"
 
 import { Input } from "@chakra-ui/react"
 import { Field } from "@/components/ui/field"
@@ -27,6 +36,7 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit }: DialogProps) => {
     const [adressClient, setAdressClient] = useState('')
     const [sdecAddress, setSdecAddress] = useState('')
     const [phone, setPhone] = useState('')
+    // const [size, setSize] = useState()
 
     const validateAndSubmit = () => {
         if (!name || !adressClient || !sdecAddress || !phone) {
@@ -35,7 +45,7 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit }: DialogProps) => {
                 anchorOrigin: {
                     vertical: 'bottom',
                     horizontal: 'right',
-                  }
+                }
             })
             return
         }
@@ -46,12 +56,19 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit }: DialogProps) => {
             anchorOrigin: {
                 vertical: 'bottom',
                 horizontal: 'right',
-              }
+            }
         })
     }
-    
+
+    const clothSize = createListCollection({
+        items: [
+            { label: "M", value: "M" },
+            { label: "XL", value: "XL" },
+        ],
+    })
+
     return (
-        <DialogRoot closeOnEscape open={isOpen}>
+        <DialogRoot onEscapeKeyDown={onCancel} closeOnEscape open={isOpen}>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>Оформление заказа</DialogTitle>
@@ -81,11 +98,31 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit }: DialogProps) => {
                         <Field className="form-field" label="Номер телефона " required>
                             <Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="89..." />
                         </Field>
+
+                        <SelectRoot onValueChange={(e) => {
+                            console.log(e)
+                        }} required collection={clothSize} size="sm" width="320px">
+                            <SelectLabel >Размер {<span style={{
+                                color: 'red'
+                            }}>*</span>}</SelectLabel>
+                            <SelectTrigger>
+                                <SelectValueText placeholder="Укажите размер" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                {clothSize.items.map((cloth) => {
+                                    return (
+                                        <SelectItem item={cloth} key={cloth.value}>
+                                            {cloth.label}
+                                        </SelectItem>
+                                    )
+                                })}
+                            </SelectContent>
+                        </SelectRoot>
                     </div>
                 </DialogBody>
                 <DialogFooter>
-                    <Button onClick={onCancel} variant="outline">Cancel</Button>
-                    <Button onClick={validateAndSubmit}>Save</Button>
+                    <Button onClick={onCancel} variant="outline">Закрыть</Button>
+                    <Button onClick={validateAndSubmit}>Перейти к оплате</Button>
                 </DialogFooter>
                 <DialogCloseTrigger onClick={onCancel} />
             </DialogContent>

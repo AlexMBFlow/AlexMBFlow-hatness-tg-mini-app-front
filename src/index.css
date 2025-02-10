@@ -8,3 +8,7 @@ body {
 .notistack-SnackbarContainer {
   z-index: 99999 !important;
 }
+
+.chakra-select__positioner {
+  z-index: 999999 !important;
+}
