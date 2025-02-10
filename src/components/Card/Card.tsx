@@ -1,13 +1,8 @@
 import './Card.css'
-import Select from 'react-select'
 import ItemLogo from '../../assets/mock.png'
 import { Button } from '../Button/Button'
 
 export const Card = () => {
-    const options = [
-        { value: 'L', label: 'L' },
-        { value: 'M', label: 'M' },
-    ]
     return <div className="card-container">
         <div className="item-logo">
             <img width={150} height={150} src={ItemLogo} alt="Превью" />
