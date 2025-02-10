@@ -1,0 +1,37 @@
+.card-container {
+    display: flex;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.item-actions-select {
+    width: 50%;
+    height: 100%;
+}
+
+.item-description {
+    padding: .25rem .5rem;
+}
+
+.item-title {
+    padding: .25rem 0;
+}
+
+.item-text {
+    padding: .25rem 0;
+}
+
+.item-price {
+    padding: .25rem 0;
+}
+
+.item-actions {
+    padding: 0.5rem;
+}
+
+.item-actions-select {
+    padding-left: 1rem
+}

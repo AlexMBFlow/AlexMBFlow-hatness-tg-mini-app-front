@@ -1,0 +1,17 @@
+.button-container {
+    border: 2px solid blue;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    height: 38px;
+    cursor: pointer;
+    transition: color .3s ease-out, background-color .3s ease-out;
+}
+
+.button-container:hover {
+    background-color: blue;
+    color: #FFF;
+}
