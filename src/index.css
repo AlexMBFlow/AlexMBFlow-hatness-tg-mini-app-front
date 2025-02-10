@@ -1,6 +1,10 @@
-* {
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+}
+
+.notistack-SnackbarContainer {
+  z-index: 99999 !important;
 }

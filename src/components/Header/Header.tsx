@@ -4,7 +4,7 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 export const Header = () => {
     const userName = window.Telegram.WebApp.initDataUnsafe?.user?.username
     const [text, _] = useTypewriter({
-        words: [`Здравствуй, ${userName || 'Sherri270'}!`, 'Добро пожаловать в Hatness Shop!',],
+        words: [`Здравствуй, ${userName || 'Sherri270'}!`, 'Добро пожаловать в Hatness!',],
         loop: true,
         delaySpeed: 800,
         typeSpeed: 115
