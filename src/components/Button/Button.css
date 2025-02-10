@@ -1,5 +1,5 @@
 .button-container {
-    border: 2px solid blue;
+    border: 2px solid red;
     border-radius: .5rem;
     display: flex;
     align-items: center;
@@ -8,10 +8,11 @@
     height: 100%;
     height: 38px;
     cursor: pointer;
-    transition: color .3s ease-out, background-color .3s ease-out;
+    transition: color .3s ease-out, background-color .3s ease-out, transform .3s ease-out;
 }
 
-.button-container:hover {
-    background-color: blue;
+.button-container:active {
+    background-color: red;
     color: #FFF;
+    transform: scale(1.2);
 }

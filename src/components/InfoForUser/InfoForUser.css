@@ -3,8 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 1rem;
 }
 
 .info-for-user-container > p {
     padding: 0.3rem;
+    color: #FFF
 }

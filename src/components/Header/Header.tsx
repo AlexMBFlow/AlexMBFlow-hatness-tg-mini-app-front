@@ -3,7 +3,9 @@ export const Header = () => {
     const userName = window.Telegram.WebApp.initDataUnsafe?.user?.username
     return <div className="product-header-container">
         <div className="product-header-welcome">
-            Здравствуй, {userName || 'Sherri270'}!
+            Здравствуй, <span style={{
+                fontWeight: 'bold'
+            }}>{userName || 'Sherri270'}</span>!
         </div>
     </div>
 }
