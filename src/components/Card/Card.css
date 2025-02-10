@@ -1,6 +1,7 @@
 .card-container {
     display: flex;
-    color: #FFF
+    color: #FFF;
+    margin-bottom: 2rem;
 }
 
 .item-actions {
@@ -35,4 +36,8 @@
 .item-actions-select {
     color: black;
     padding-bottom: .5rem;
+}
+
+.item-logo {
+    transform: scale(1.18);
 }

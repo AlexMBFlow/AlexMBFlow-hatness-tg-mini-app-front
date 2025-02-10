@@ -1,6 +1,6 @@
 import './Card.css'
 import Select from 'react-select'
-import ItemLogo from '../../assets/mock.jpg'
+import ItemLogo from '../../assets/mock.png'
 import { Button } from '../Button/Button'
 
 export const Card = () => {
