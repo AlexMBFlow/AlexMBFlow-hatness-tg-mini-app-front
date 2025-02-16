@@ -40,4 +40,5 @@
 
 .item-logo {
     transform: scale(1.18);
+    cursor: pointer;
 }
