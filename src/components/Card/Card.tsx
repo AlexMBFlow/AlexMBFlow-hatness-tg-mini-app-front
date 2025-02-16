@@ -7,10 +7,10 @@ export const Card = ({ title, material, price, onButtonBuyClick, logo, onLogoCli
         <div className="card-container">
             <AwesomeSlider animation='fallAnimation'>
                 {logo.map((logo, i) => (
-                    <div onClick={() => {
+                    <div className="item-logo" key={i}>
+                        <img onClick={() => {
                         onLogoClick(logo)
-                    }} className="item-logo" key={i}>
-                        <img width={150} height={150} src={logo} alt="Превью" />
+                    }} width={150} height={150} src={logo} alt="Превью" />
                     </div>
                 ))}
             </AwesomeSlider>
