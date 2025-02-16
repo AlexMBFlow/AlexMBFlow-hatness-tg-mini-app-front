@@ -1,40 +1,30 @@
 import './Card.css'
-import ItemLogo from '../../assets/mock.png'
 import { Button } from '../Button'
-import { useState } from 'react'
-import { PurchaseForm } from '../PurchaseForm'
-
-// interface CardProps {
-//     onClick: () => void;
-// }
-
-export const Card = () => {
-    const [isOpenDialog, setIsOpenDialog] = useState(false);
-    const onCancel = () => {
-        setIsOpenDialog(false)
-    }
-
-    const onSubmit = () => {
-        setIsOpenDialog(false)
-    }
-
+import { CardProps } from '../ProductList/ProductList'
+import AwesomeSlider from 'react-awesome-slider'
+export const Card = ({ title, material, price, onButtonBuyClick, logo, onLogoClick }: CardProps) => {
     return <>
         <div className="card-container">
-            <div className="item-logo">
-                <img width={150} height={150} src={ItemLogo} alt="Превью" />
-            </div>
+            <AwesomeSlider animation='fallAnimation'>
+                {logo.map((logo, i) => (
+                    <div onClick={() => {
+                        onLogoClick(logo)
+                    }} className="item-logo" key={i}>
+                        <img width={150} height={150} src={logo} alt="Превью" />
+                    </div>
+                ))}
+            </AwesomeSlider>
             <div className="item-description">
-                <div className="item-title">HATNESS HELL</div>
-                <div className="item-text">Материал: хлопок 95% лайкра 5%</div>
-                <div className='item-price'>Цена: 5000₽</div>
+                <div className="item-title">{title}</div>
+                <div className="item-text">Материал: {material}</div>
+                <div className='item-price'>Цена: {price}₽</div>
                 <div className="item-actions">
-                    {/* <Select placeholder={'Размер'} className="item-actions-select" options={options} /> */}
-                    <Button onClick={() => {
-                        setIsOpenDialog(true)
-                    }}>Купить</Button>
+                    <Button onClick={() => onButtonBuyClick({
+                        title
+                    })}>Купить</Button>
                 </div>
             </div>
         </div>
-        <PurchaseForm isOpen={isOpenDialog} onCancel={onCancel} onSubmit={onSubmit} />
+        {/* <LogoPreview setPreviewLogoPath={setPreviewLogoPath} logoPath={selectedLogo} isOpen={Boolean(selectedLogo)} /> */}
     </>
 }

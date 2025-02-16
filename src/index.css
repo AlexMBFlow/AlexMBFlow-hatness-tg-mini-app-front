@@ -12,3 +12,26 @@ body {
 .chakra-select__positioner {
   z-index: 999999 !important;
 }
+
+.awssld__content {
+  background-color: transparent !important;
+}
+
+.awssld {
+  width: 50% !important;
+}
+
+.awssld__bullets button.awssld__bullets--active {
+  background-color: hsl(339, 97%, 48%) !important;
+}
+
+.awssld__bullets button {
+  background-color: hsl(339, 97%, 48%) !important;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.awssld__next, .awssld__prev {
+  opacity: 0;
+  cursor: default !important;
+}
