@@ -5,7 +5,7 @@ export const Header = () => {
     const userName = window.Telegram.WebApp.initDataUnsafe?.user?.username
     const greetings = `Здравствуй${userName ? `, ${userName}!` : 'те!'}`
     const [text, _] = useTypewriter({
-        words: [greetings, 'Добро пожаловать в Hatness!',],
+        words: [greetings, 'Добро пожаловать в Hateness!',],
         loop: true,
         delaySpeed: 800,
         typeSpeed: 115

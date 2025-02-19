@@ -132,7 +132,7 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit, productName }: Dialog
                     </Field>
 
                     <Field className="form-field" label="Точный адрес (город, улица, кв)" required>
-                        <Input value={adressClient} onChange={(e) => setAdressClient(e.target.value)} placeholder="г. Москва, Ходынский бульвар 4, квартира 8" />
+                        <Input value={adressClient} onChange={(e) => setAdressClient(e.target.value)} placeholder="г. Москва, Казанский переулок 4, кв. 8" />
                     </Field>
 
                     <Field className="form-field" label="Адрес сдека (обязательно с городом)" required>
