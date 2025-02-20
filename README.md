@@ -48,4 +48,4 @@ export default tseslint.config({
   },
 })
 ```
-# AlexMBFlow-hatness-tg-mini-app-front
+# AlexMBFlow-hateness-tg-mini-app-front
