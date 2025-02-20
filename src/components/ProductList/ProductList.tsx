@@ -22,37 +22,37 @@ interface CardInfo {
 }
 
 const cards: CardInfo[] = [{
-    title: 'HATNESS HELL Long1',
+    title: 'HATENESS HELL Long1',
     material: 'хлопок 95% лайкра 5%',
     price: 1000,
     logo: [ItemLogo, ItemLogo]
 }, {
-    title: 'HATNESS HELL Long2',
+    title: 'HATENESS HELL Long2',
     material: 'хлопок 95% лайкра 5%',
     price: 2000,
     logo: [ItemLogo, ItemLogo]
 }, {
-    title: 'HATNESS HELL Long3',
+    title: 'E HELL Long3',
     material: 'хлопок 95% лайкра 5%',
     price: 3000,
     logo: [ItemLogo, ItemLogo]
 }, {
-    title: 'HATNESS HELL Long4',
+    title: 'HATENESS HELL Long4',
     material: 'хлопок 95% лайкра 5%',
     price: 4000,
     logo: [ItemLogo, ItemLogo]
 }, {
-    title: 'HATNESS HELL Long',
+    title: 'HATENESS HELL Long',
     material: 'хлопок 95% лайкра 5%',
     price: 5000,
     logo: [ItemLogo, ItemLogo]
 }, {
-    title: 'HATNESS HELL Long',
+    title: 'HATENESS HELL Long',
     material: 'хлопок 95% лайкра 5%',
     price: 6000,
     logo: [ItemLogo, ItemLogo]
 }, {
-    title: 'HATNESS HELL Long',
+    title: 'HATENESS HELL Long',
     material: 'хлопок 95% лайкра 5%',
     price: 7000,
     logo: [ItemLogo, ItemLogo]
