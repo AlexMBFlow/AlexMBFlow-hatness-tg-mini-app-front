@@ -79,7 +79,7 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit, productName }: Dialog
         }
 
         const orderMessage =
-            `Здравствуйте! Хотел бы приобрести ${productName}:
+            `Здравствуйте! Хотел(-а) бы приобрести ${productName}:
 ФИО: **${name}**
 Точный адрес: **${adressClient}**
 Адрес сдека: **${sdecAddress}**
