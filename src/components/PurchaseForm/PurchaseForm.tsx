@@ -144,6 +144,7 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit, productName }: Dialog
                     </Field>
 
                     <SelectRoot onValueChange={(e) => {
+                        alert(e)
                         setSize(e.value[0])
                     }} required collection={clothSize} size="sm" width="320px">
                         <SelectLabel >Размер {<span style={{
