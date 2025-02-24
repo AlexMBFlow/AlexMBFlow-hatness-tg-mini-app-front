@@ -1,5 +1,5 @@
 import './PurchaseForm.css'
-import { Button, createListCollection } from "@chakra-ui/react"
+import { Button } from "@chakra-ui/react"
 import {
     DialogBody,
     DialogCloseTrigger,
@@ -10,15 +10,6 @@ import {
     DialogTitle,
     DialogDescription
 } from "@/components/ui/dialog"
-
-import {
-    SelectContent,
-    SelectItem,
-    SelectLabel,
-    SelectRoot,
-    SelectTrigger,
-    SelectValueText,
-} from "@/components/ui/select"
 
 import { Input } from "@chakra-ui/react"
 import { Field } from "@/components/ui/field"
@@ -51,7 +42,7 @@ const initialState = {
     adressClient: '',
     sdecAddress: '',
     phone: '',
-    size: null
+    size: ''
 }
 
 export const PurchaseForm = ({ isOpen, onCancel, onSubmit, productName }: DialogProps) => {
@@ -59,7 +50,7 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit, productName }: Dialog
     const [adressClient, setAdressClient] = useState(initialState.adressClient)
     const [sdecAddress, setSdecAddress] = useState(initialState.sdecAddress)
     const [phone, setPhone] = useState(initialState.phone)
-    const [size, setSize] = useState<null | string>(initialState.size)
+    const [size, setSize] = useState(initialState.size)
 
     const validateAndSubmit = () => {
         if (!productName) {
@@ -94,15 +85,8 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit, productName }: Dialog
                 enqueueSnackbar(<div>Не удалось скопировать заказ в буфер обмена, для заказа обратитесь к нашему <a href='https://t.me/sherri270'><span className='purchase-to-manager'>менеджеру</span></a></div>, getSnackbarOptions('error'))
             })
 
-        onSubmit() // {...}
+        onSubmit()
     }
-
-    const clothSize = createListCollection({
-        items: [
-            { label: "M", value: "M" },
-            { label: "XL", value: "XL" },
-        ],
-    })
 
     const onDialogClose = () => {
         setName(initialState.name)
@@ -139,30 +123,13 @@ export const PurchaseForm = ({ isOpen, onCancel, onSubmit, productName }: Dialog
                         <Input value={sdecAddress} onChange={(e) => setSdecAddress(e.target.value)} placeholder="г. Москва, Беговая улица, 32" />
                     </Field>
 
-                    <Field className="form-field" label="Номер телефона " required>
+                    <Field className="form-field" label="Номер телефона" required>
                         <Input value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="89..." />
                     </Field>
 
-                    <SelectRoot onValueChange={(e) => {
-                        alert(e)
-                        setSize(e.value[0])
-                    }} required collection={clothSize} size="sm" width="320px">
-                        <SelectLabel >Размер {<span style={{
-                            color: '#f87171'
-                        }}>*</span>}</SelectLabel>
-                        <SelectTrigger>
-                            <SelectValueText placeholder="Укажите размер" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {clothSize.items.map((cloth) => {
-                                return (
-                                    <SelectItem item={cloth} key={cloth.value}>
-                                        {cloth.label}
-                                    </SelectItem>
-                                )
-                            })}
-                        </SelectContent>
-                    </SelectRoot>
+                    <Field className="form-field" label="Размер" required>
+                        <Input value={size} onChange={(e) => setSize(e.target.value)} placeholder="S/M/L/XL/XXL/XXXL" />
+                    </Field>
                 </DialogBody>
                 <DialogFooter>
                     <Button onClick={onCancel} variant="outline">Закрыть</Button>
